@@ -30,7 +30,20 @@ print("")
 print("Function: report_long_words")
 
 def report_long_words(words):
-  pass
+  character_count = []
+  for word in words:
+      if "-" in word:
+        pass
+      elif len(word) > 15:
+          shorten = word[0:15] + "..."
+          character_count.append(shorten)
+      else:
+        if len(word) > 10:
+          character_count.append(word)
+
+  report = "These words are quite long: "
+  report = report + ", ".join(character_count)
+  return report
 
 check_that_these_are_equal(
   report_long_words([
@@ -60,5 +73,6 @@ check_that_these_are_equal(
   ]),
   "These words are quite long: "
 )
+
 
 # Once you're done, move on to 041_challenge_2_example.py
